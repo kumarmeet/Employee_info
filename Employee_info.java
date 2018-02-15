@@ -34,7 +34,7 @@ final class Test extends Class_2nd_Employee
 {
     public void test()
     {
-        System.out.print("For class 1st employee press-[1] or class 2nd empoyee press-[2]: ");
+        System.out.print("For class 1st employee press-[1] or class 2nd employee press-[2]: ");
         int input;
         char ch;
         boolean isNumber;
@@ -121,7 +121,7 @@ final class Test extends Class_2nd_Employee
           }   
         }
             else{
-                System.out.println("I dont understand you");
+                System.out.println("Invalid Input***Try Again!");
                 isNumber=false;
                 scan.next();
             }
