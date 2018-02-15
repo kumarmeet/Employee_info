@@ -1,35 +1,34 @@
 package employeepf;
-import java.io.IOException;
-import java.util.Scanner;
+import java.util.*;
 
 abstract class Abstract
 {
-   private String name;
-   protected float salary;
-   public void setName(String n)
-   {   name=n;   }
-   public void setSalary(float s)
-   {   salary=s; }
-   public void showName()
-   {System.out.println("Employee Name is: "+name);}
-   public void showSalary()
-   {System.out.println("Employee Salary is: "+salary);}
+    private String name;
+    protected float salary;
+    public void setName(String n)
+    {   name=n;   }
+    public void setSalary(float s)
+    {   salary=s; }
+    public void showName()
+    {System.out.println("Employee Name is: "+name);}
+    public void showSalary()
+    {System.out.println("Employee Salary is: "+salary);}
 }
 class Class_1st_Employee extends Abstract
 {
-   private float pf;
-   public void calPF()
-   {pf=(salary/100)*12;}
-   public void showPF()
-   {System.out.println("Class 1st Employee PF Amount is: "+pf+"\n");}
+    private float pf;
+    public void calPF()
+    {pf=(salary/100)*12;}
+    public void showPF()
+    {System.out.println("Class 1st Employee PF Amount is: "+pf+"\n");}
 }
 class Class_2nd_Employee extends Abstract
 {
-   private float pf;
-   public void calPF()
-   {pf=(salary/100)*13;}
-   public void showPF()
-   {System.out.println("Class 2nd Employee PF Amount is: "+pf);}
+    private float pf;
+    public void calPF()
+    {pf=(salary/100)*13;}
+    public void showPF()
+    {System.out.println("Class 2nd Employee PF Amount is: "+pf);}
 }
 final class Test extends Class_2nd_Employee
 {
@@ -118,22 +117,20 @@ final class Test extends Class_2nd_Employee
 }
 class Employee_info
 {
-   public static void main(String []args)
-   {
-       Test t1=new Test();
-       Scanner password_input=new Scanner(System.in);
-       while(t1.password!=12345)
-       {
-           System.out.print("Input Password-> 12345:   ");
-           t1.password=password_input.nextInt();
-           if(t1.password!=12345)
-           {
-               System.out.println("Try Again!");
-           }
-       }
-       t1.test();
-       password_input.close();
-   }
+    public static void main(String []args)
+    {
+        Test t1=new Test();
+        Scanner password_input=new Scanner(System.in);
+        while(t1.password!=12345)
+        {
+            System.out.print("Input Password-> 12345:   ");
+            t1.password=password_input.nextInt();
+            if(t1.password!=12345)
+            {
+                System.out.println("Try Again!");
+            }
+        }
+        t1.test();
+        password_input.close();
+    }
 }
-
-
