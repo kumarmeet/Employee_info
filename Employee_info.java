@@ -14,27 +14,27 @@ abstract class Abstract
     public void showSalary()
     {System.out.println("Employee Salary is: "+salary);}
 }
-class Class_1st_Employee extends Abstract
+class Skilled_Employee extends Abstract
 {
     private float pf;
     public void calPF()
     {pf=(salary/100)*12;}
     public void showPF()
-    {System.out.println("Class 1st Employee PF Amount is: "+pf+"\n");}
+    {System.out.println("Skilled Employee PF Amount is: "+pf+"\n");}
 }
-class Class_2nd_Employee extends Abstract
+class Unskilled_Employee extends Abstract
 {
     private float pf;
     public void calPF()
     {pf=(salary/100)*13;}
     public void showPF()
-    {System.out.println("Class 2nd Employee PF Amount is: "+pf);}
+    {System.out.println("Unskilled Employee PF Amount is: "+pf);}
 }
-final class Test extends Class_2nd_Employee
+final class Test extends Unskilled_Employee
 {
     public void test()
     {
-        System.out.print("For class 1st employee press-[1] or class 2nd employee press-[2]: ");
+        System.out.print("For skilled employee press-[1] or Unskilled employee press-[2]: ");
         int input;
         char ch;
         boolean isNumber;
@@ -48,15 +48,26 @@ final class Test extends Class_2nd_Employee
         {
             case 1:
             Scanner next=new Scanner(System.in);
-            System.out.println("Welcome you are entered in class 1st employee");
+            System.out.println("Welcome you are entered in Skilled employee");
             do{
                 Scanner input1=new Scanner(System.in);
                 System.out.println("How many entry you want: ");
                 byte class_1st=input1.nextByte();
-                Class_1st_Employee cs1[]=new Class_1st_Employee[class_1st];
+                do{
+                    if(input1.hasNextByte()){
+                        class_1st=input1.nextByte();
+                        isNumber=true;
+                    }
+                    else{
+                        System.out.println("Invalid Input***Try Again!");
+                        isNumber=false;
+                        input1.next();
+                    }
+                }while(!(isNumber));
+                Skilled_Employee cs1[]=new Skilled_Employee[class_1st];
                 for(int i=0;i<cs1.length;i++)
                 {
-                    cs1[i]=new Class_1st_Employee();
+                    cs1[i]=new Skilled_Employee();
                     Scanner emp1=new Scanner(System.in);
                     System.out.print("Enter [" +i+ "] Employee Name: ");
                     String name=emp1.nextLine();
@@ -65,33 +76,33 @@ final class Test extends Class_2nd_Employee
                     float salary=emp1.nextFloat();
                     if(salary<=30052.21f){
                         cs1[i].setSalary(salary);
+                        for(int j=0;j<cs1.length;j++)
+                        {
+                            cs1[j].showName();
+                            cs1[j].showSalary();
+                            cs1[j].calPF();
+                            cs1[j].showPF();
+                        }
                     }
                     else{
-                        System.out.println("The salary of class 1st employee is 30052.21.***Try agarin!");
+                        System.out.println("The salary of Skilled employee is 30052.21.***Try agarin!");
                     }
                 }
-                for(int j=0;j<cs1.length;j++)
-                {
-                    cs1[j].showName();
-                    cs1[j].showSalary();
-                    cs1[j].calPF();
-                    cs1[j].showPF();
-                }
-                System.out.print("Do you want to go to class 1st employee entry then press [y] or [Y]: ");
+                System.out.print("Do you want to go to Skilled employee entry then press [y] or [Y]: ");
                 ch=next.next().charAt(0);
             }while(ch=='y'||ch=='Y');
             break;
             case 2:
             Scanner next1=new Scanner(System.in);
-            System.out.println("Welcome you are entered in class 2nd employee");
+            System.out.println("Welcome you are entered in unskilled employee");
             do{
                 Scanner input2=new Scanner(System.in);
                 System.out.println("How many entry you want: ");
                 byte class_2nd=input2.nextByte();
-                Class_2nd_Employee cs2[]=new Class_2nd_Employee[class_2nd];
+                Unskilled_Employee cs2[]=new Unskilled_Employee[class_2nd];
                 for(int i=0;i<cs2.length;i++)
                 {
-                    cs2[i]=new Class_2nd_Employee();
+                    cs2[i]=new Unskilled_Employee();
                     Scanner emp2=new Scanner(System.in);
                     System.out.print("Enter [" +i+ "] Employee Name: ");
                     String name=emp2.nextLine();
@@ -100,19 +111,19 @@ final class Test extends Class_2nd_Employee
                     float salary=emp2.nextFloat();
                     if(salary<=20521.66f){
                         cs2[i].setSalary(salary);
+                        for(int j=0;j<cs2.length;j++)
+                        {
+                            cs2[j].showName();
+                            cs2[j].showSalary();
+                            cs2[j].calPF();
+                            cs2[j].showPF();
+                        }
                     }
                     else{
-                        System.out.println("The salary of class 2nd employee is 30052.21.***Try agarin!");
+                        System.out.println("The salary of unskilled employee is 30052.21.***Try agarin!");
                     }
                 }
-                for(int j=0;j<cs2.length;j++)
-                {
-                    cs2[j].showName();
-                    cs2[j].showSalary();
-                    cs2[j].calPF();
-                    cs2[j].showPF();
-                }
-                System.out.print("Do you want to go to class 2nd employee entry then press [y] or [Y]: ");
+                System.out.print("Do you want to go to unskilled employee entry then press [y] or [Y]: ");
                 ch=next1.next().charAt(0);
             }while(ch=='y'||ch=='Y');
             break;
