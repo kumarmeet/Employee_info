@@ -63,7 +63,12 @@ final class Test extends Class_2nd_Employee
                     cs1[i].setName(name);
                     System.out.print("Enter [" +i+ "] Employee Salary: ");
                     float salary=emp1.nextFloat();
-                    cs1[i].setSalary(salary);
+                    if(salary<=30052.21f){
+                        cs1[i].setSalary(salary);
+                    }
+                    else{
+                        System.out.println("The salary of class 1st employee is 30052.21.***Try agarin!");
+                    }
                 }
                 for(int j=0;j<cs1.length;j++)
                 {
@@ -93,7 +98,12 @@ final class Test extends Class_2nd_Employee
                     cs2[i].setName(name);
                     System.out.print("Enter [" +i+ "] Employee Salary: ");
                     float salary=emp2.nextFloat();
-                    cs2[i].setSalary(salary);
+                    if(salary<=20521.66f){
+                        cs2[i].setSalary(salary);
+                    }
+                    else{
+                        System.out.println("The salary of class 2nd employee is 30052.21.***Try agarin!");
+                    }
                 }
                 for(int j=0;j<cs2.length;j++)
                 {
