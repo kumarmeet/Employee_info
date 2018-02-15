@@ -52,7 +52,6 @@ final class Test extends Unskilled_Employee
             do{
                 Scanner input1=new Scanner(System.in);
                 System.out.println("How many entry you want: ");
-                byte class_1st=input1.nextByte();
                 byte class_1st=0;
                 do{
                     if(input1.hasNextByte()){
